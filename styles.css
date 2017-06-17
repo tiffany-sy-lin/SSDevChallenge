@@ -1,0 +1,69 @@
+body {
+  font-family: Helvetica;
+  margin: 20px;
+}
+
+thead {
+  background-color: #f6f6f6;
+  position:relative;
+}
+
+th {
+  padding: 5px !important;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+
+}
+
+tr:hover {
+  background-color: #f7f7f7;
+}
+
+td {
+  font-size: 12px;
+  padding: 5px !important;
+  border: 1px solid #ccc;
+
+}
+
+
+img {
+  max-width: 100px;
+  max-height: 100px; 
+}
+
+input#myInput {
+  padding: 5px !important; 
+  width:100%;
+}
+
+#tableWrapper {
+  position:relative;
+  margin-top:5px;
+}
+
+#tableScroll {
+  height:270px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+table#revenueTable, table#revenueTable {
+  margin:20px 0px 20px 0px;
+  width:100%;
+}
+
+input, button, select, textarea {
+  width:100%;
+  height:30px;
+  margin: 0px 0px 10px 0px;
+}
+
+.btn-primary {
+  height:100%;
+}
+
+.addNewRevenue {
+  padding-left:20px;
+}

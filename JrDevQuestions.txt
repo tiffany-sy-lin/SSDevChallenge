@@ -1,0 +1,84 @@
+1. What will be output from the code below and why?
+var b = “foo”;
+
+(function () 
+	{
+    var a = b = “bar”;
+	}
+)
+();
+console.log(b);
+
+/*Answer 1.*/
+The console should print out "bar" because in the function, b is assigned the value "bar" and then a is assigned the value in variable b (which can be ignored becuase we do not need to know the value of a).
+
+2. What is Prototypal inheritance? What are some of its Pros and Cons?
+/*Answer 2.*/
+Prototypal inheritance is the process of reusing exisiting objects via deligation that serve as prototypes. For example, you may have an animal object with an "eats" property equal to true. Then you have a [[prototype]] cat object that was created from the animal object, but currently does not have any properties. If I were to print cat.eats, the value would be true.
+
+Some Pros are that it is easy to implement, it doesn't overwrite exisiting properties, is dynamic, and overall leads to smaller and less redundant code.
+Some Cons are argument conventions might be annoying, object creation can be much slower than in a more conventional class/object dichotomy scheme, and overall could be less efficient.
+
+3. Write a function that checks if an inputted value is a palindrome. The function should return true/false (bool). You can assume that all input will be a string type and lower case.
+
+/*Answer 3.*/
+function isPalindrome(input) 
+{
+  var half_len = Math.floor(input.length / 2);
+  for (var i = 0; i < half_len; i++)
+    if (input[i] !== input[input.length - i - 1])
+      return false;
+  return true;
+}
+isPalindrome('inputwordhere');
+
+4. Write a function that accepts two parameters: (1) a collection of keywords and (2) a new item to be appended to the end of the collection. The function should check to ensure that only unique values are added to the collection. The function should return the new updated array.
+
+/*Answer 4.*/
+var stored_array = [];
+
+function arrayUpdate(stored_array, input){
+	var len = stored_array.length;
+	var new_word = input;
+	for (i = 0; i < len; i++){
+		if (new_word == stored_array[i]){
+			return stored_array;
+		}
+	}
+	stored_array.push(new_word);
+	return stored_array;
+}
+arrayUpdate(stored_array, 'inputwordhere');
+
+5. Create basic web page to display information from an API. The API returns 2016 revenue for companies in different industries. The page should have a list view of all the data which can be sorted by revenue and company name, and a user can search for a specific company. In addition to the list you should create a graph displaying total revenue by industry. Finally create a simple form input that allows the user to add additional revenue information for an existing company. The fields should list the available companies and inputs for year and revenue. It should not allow a user to add revenue for a year that already exists.
+You should commit your code to Github and send us the link to the finished page. You can use any JavaScript tools or libraries that you see fit.
+
+
+
+Example API results:
+application/json
+{
+	“companies”: [
+		{“name”: “Google”, “revenue”: 21000000000, “year”: 2010, “industry”: “technology”}	
+        ]
+}
+
+API Endpoints:
+Domain: http://jsapi.makespi.com
+GET /api/companies/revenue
+PARAMS:
+- year, integer, 2010
+- company, string, optional
+- sort, string, optional, one of: company, revenue, industry.
+- sort_order, string optional, one of: 1 (ascending), 2 (descending).
+- key, string, required: 32-character API key.
+
+POST /api/companies/revenue
+PARAMS:
+- company, string, required.
+- revenue, float, required.
+- year, integer, required, date must be YYYY.
+- key, string, required: 32-character API key.
+
+
+API Key: 4e9f746aa8df5eeba6232ce96bddcd58

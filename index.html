@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>StepStone</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+	<script src="main.js"></script>
+	<script src="sort.js"></script>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<h2>StepStone Dev Assessment</h2>
+	<h3>Companies Revenues</h3>
+	<div id=tableWrapper class="col-md-6">
+		<input type="text" id="myInput" placeholder="Search...">
+    <div id=tableScroll>
+      <table id='revenueTable'>
+        <thead id='tableHeader'>
+          <th>Industry</th>
+          <th onclick="sortRevenueTable(1)">Company</th>
+          <th onclick="sortsortRevenueTable(2)">Revenue</th>
+          <th>Year</th>
+        </thead>
+        <tbody>
+        </tbody>
+    	</table>
+    </div>
+  </div>
+  <div class="col-md-6">
+  	<div class="addNewRevenue">
+  		<h4>Add New Revenue</h4>
+			<form id='newRevenueForm' method='post'>
+				Company:<br>
+				<select id="dropdownList" required>
+        	<option id='company'selected="Selected"></option>
+      	</select><br>
+  			Revenue:<br>
+  			<input type="number" id="newRevenue" required><br>
+  			Year:<br>
+  			<input type="number" id="year" required><br>
+  			<button type="button" class="btn btn-primary" id='submitButton'>Submit</button>
+			</form>
+		</div>
+	</div>
+  <div class="d-inline">
+  	<canvas id="myChart" max-width="400" max-height="400"></canvas>
+  </div>
+</body>
+</html>
