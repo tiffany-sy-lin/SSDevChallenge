@@ -6,7 +6,7 @@ $(document).ready(
 function(){
 $.ajax({
     type:"get",
-    url:"https://jsapi.makespi.com/api/companies/revenue",
+    url:"//jsapi.makespi.com/api/companies/revenue",
     data: {
         key: '4e9f746aa8df5eeba6232ce96bddcd58'
     },
@@ -82,7 +82,7 @@ function postData() {
   }
   var saveData = $.ajax({
       type: 'POST',
-      url: "https://jsapi.makespi.com/api/companies/revenue",
+      url: "//jsapi.makespi.com/api/companies/revenue",
       data: formData,
       success: function() { alert("Save Complete") }
   });
